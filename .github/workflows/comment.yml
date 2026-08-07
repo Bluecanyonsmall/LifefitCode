@@ -3,7 +3,7 @@ name: Auto Comment
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '45 * * * *'
 
 jobs:
   run:
