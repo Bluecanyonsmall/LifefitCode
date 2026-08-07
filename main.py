@@ -10,7 +10,11 @@ with sync_playwright() as p:
         timeout=60000
     )
 
-    textarea = page.locator('textarea[name="body"]')
-    print("textareaの数:", textarea.count())
+    html = page.content()
+
+    with open("page.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
+    print("HTML保存完了")
 
     browser.close()
