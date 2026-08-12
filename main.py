@@ -50,7 +50,7 @@ with sync_playwright() as p:
 
         inputarea = page.locator('input[name="nickname"]')
         textarea = page.locator('textarea[name="body"]')
-        textarea.wait_for(timeout=30000)
+        textarea.wait_for(timeout=1000)
 
         inputarea.fill(NAME)
         textarea.fill(MESSAGE)
@@ -60,6 +60,6 @@ with sync_playwright() as p:
 
         print("投稿完了")
 
-        page.wait_for_timeout(5000)
+        page.wait_for_timeout(1000)
 
     browser.close()
