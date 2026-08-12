@@ -1,5 +1,7 @@
 from playwright.sync_api import sync_playwright
 
+NAME = "筋トレ！"
+
 MESSAGE = """はじめやすく、つづくフィットネスジム💪✨
 
 一緒に #ライフフィット で運動はじめませんか？🔰
@@ -46,9 +48,11 @@ with sync_playwright() as p:
         # コメント入力欄を開く
         page.locator("button.insert-post-area").first.click()
 
+        inputarea = page.locator('input[name="nickname"]')
         textarea = page.locator('textarea[name="body"]')
         textarea.wait_for(timeout=30000)
 
+        inputarea.fill(NAME)
         textarea.fill(MESSAGE)
 
         # 投稿
