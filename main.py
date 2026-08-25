@@ -54,7 +54,7 @@ with sync_playwright() as p:
 
         inputarea = page.locator('input[name="nickname"]')
         textarea = page.locator('textarea[name="body"]')
-        textarea.wait_for(timeout=1000)
+        textarea.wait_for(timeout=10000)
 
         inputarea.fill(NAME)
         textarea.fill(MESSAGE)
