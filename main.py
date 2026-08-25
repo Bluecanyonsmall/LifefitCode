@@ -31,9 +31,13 @@ with sync_playwright() as p:
     )
 
     # 最新コメント本文取得
+    """
     latest_comment = page.locator(
         'xpath=//*[@id="commentApp"]/div/div[2]/ul/li[1]/div[2]/div[2]'
     ).inner_text()
+    """
+    
+    latest_comment = "修正中"
 
     print("最新コメント:")
     print(latest_comment)
