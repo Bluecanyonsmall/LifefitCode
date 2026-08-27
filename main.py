@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 
-NAME = "なぎさ"
+NAME = "筋トレ！"
 
 MESSAGE = """はじめやすく、つづくフィットネスジム💪✨
 
