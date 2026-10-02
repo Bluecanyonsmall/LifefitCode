@@ -1,6 +1,12 @@
 from playwright.sync_api import sync_playwright
 
-NAME = "筋トレ！"
+NAME_LIST = ["筋トレ！", "フィットネス！", "運動大好き！", "健康第一！", 
+             "ライフフィット！", "体力向上！", "ダイエット！", "ストレス解消！", 
+             "元気いっぱい！", "体を動かそう！", "健康生活！", "運動習慣！", 
+             "フィットネス仲間！", "体力アップ！", "健康維持！", "運動チャレンジ！", 
+             "ライフスタイル改善！", "体を鍛えよう！", "健康美！", "運動で元気に！", "鋼の意志",
+             "限界一歩前", "筋肉貯金", "鉄塊", "今日も追い込み", "三日坊主卒業生", "可動域警察", 
+             "重量に恋してる", "筋肉育成中", "明日の自分に勝つ"]
 
 MESSAGE = """はじめやすく、つづくフィットネスジム💪✨
 
@@ -56,7 +62,7 @@ with sync_playwright() as p:
         textarea = page.locator('textarea[name="body"]')
         textarea.wait_for(timeout=10000)
 
-        inputarea.fill(NAME)
+        inputarea.fill(NAME_LIST[random.randint(0, len(NAME_LIST) - 1)])
         textarea.fill(MESSAGE)
 
         # 投稿
