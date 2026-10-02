@@ -1,3 +1,4 @@
+import random
 from playwright.sync_api import sync_playwright
 
 NAME_LIST = ["筋トレ！", "フィットネス！", "運動大好き！", "健康第一！", 
