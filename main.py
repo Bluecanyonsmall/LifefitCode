@@ -63,6 +63,9 @@ with sync_playwright() as p:
 
         inputarea = page.locator('input[name="nickname"]')
         textarea = page.locator('textarea[name="body"]')
+        print("inputarea:", inputarea)
+        print("textarea:", textarea)
+        print("message:", MESSAGE)
         textarea.wait_for(timeout=10000)
 
         inputarea.fill(NAME_LIST[random.randint(0, len(NAME_LIST) - 1)])
